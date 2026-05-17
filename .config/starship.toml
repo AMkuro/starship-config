@@ -1,0 +1,113 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[░▒▓](tokyo_cyan)\
+[ $os ](bg:tokyo_cyan fg:tokyo_black)\
+$username\
+[](bg:tokyo_bg2 fg:tokyo_cyan)\
+$directory\
+[](fg:tokyo_bg2 bg:tokyo_bg3)\
+$git_branch\
+$git_status\
+[](fg:tokyo_bg3 bg:tokyo_bg)\
+$nodejs\
+$rust\
+$golang\
+$php\
+[](fg:tokyo_bg bg:tokyo_bg2)\
+$time\
+[ ](fg:tokyo_bg2)\
+\n$character"""
+
+palette = 'tokyo_night'
+
+[palettes.tokyo_night]
+tokyo_bg = '#1a1b26'
+tokyo_bg2 = '#24283b'
+tokyo_bg3 = '#2f3549'
+tokyo_fg = '#c0caf5'
+tokyo_muted = '#a9b1d6'
+tokyo_blue = '#7aa2f7'
+tokyo_cyan = '#7dcfff'
+tokyo_yellow = '#e0af68'
+tokyo_black = '#000000'
+
+[os]
+disabled = false
+style = "bg:tokyo_cyan fg:tokyo_black"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
+
+[username]
+show_always = true
+style_user = "bg:tokyo_cyan fg:tokyo_black"
+style_root = "bg:tokyo_cyan fg:tokyo_black"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:tokyo_fg bg:tokyo_bg2"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:tokyo_bg3"
+format = '[[ $symbol $branch ](fg:tokyo_blue bg:tokyo_bg3)]($style)'
+
+[git_status]
+style = "bg:tokyo_bg3"
+format = '[[($all_status$ahead_behind )](fg:tokyo_blue bg:tokyo_bg3)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:tokyo_bg"
+format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:tokyo_bg"
+format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:tokyo_bg"
+format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
+
+[php]
+symbol = ""
+style = "bg:tokyo_bg"
+format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:tokyo_bg2"
+format = '[[  $time ](fg:tokyo_fg bg:tokyo_bg2)]($style)'
