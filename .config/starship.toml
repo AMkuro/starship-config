@@ -73,6 +73,7 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
+"ElectricalEngineeringExperiment2A" = " 2A"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
