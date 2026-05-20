@@ -14,6 +14,8 @@ $nodejs\
 $rust\
 $golang\
 $php\
+$python\
+$nix_shell\
 [](fg:tokyo_bg bg:tokyo_bg2)\
 $time\
 [ ](fg:tokyo_bg2)\
@@ -107,8 +109,21 @@ symbol = ""
 style = "bg:tokyo_bg"
 format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
 
+[python]
+symbol = ""
+style = "bg:tokyo_bg"
+format = '[[ $symbol ($virtualenv) ](fg:tokyo_yellow bg:tokyo_bg)]($style)'
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:tokyo_bg2"
 format = '[[  $time ](fg:tokyo_fg bg:tokyo_bg2)]($style)'
+
+[nix_shell]
+symbol = "❄️ "
+style = "bg:tokyo_bg"
+format = "[[ $symbol$state ](fg:tokyo_cyan bg:tokyo_bg)]($style)"
