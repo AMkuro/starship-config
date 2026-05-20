@@ -14,11 +14,8 @@ $nodejs\
 $rust\
 $golang\
 $php\
-$python\
-$nix_shell\
-[](fg:tokyo_bg bg:tokyo_bg2)\
-$time\
-[ ](fg:tokyo_bg2)\
+[](fg:tokyo_bg)\
+\n$cmd_duration$fill[](fg:tokyo_bg2)$python$time[](fg:tokyo_bg2)\
 \n$character"""
 
 palette = 'tokyo_night'
@@ -52,6 +49,7 @@ Fedora = "󰣛"
 Alpine = ""
 Amazon = ""
 Android = ""
+AOSC = ""
 Arch = "󰣇"
 Artix = "󰣇"
 EndeavourOS = ""
@@ -75,7 +73,6 @@ truncation_symbol = "…/"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"ElectricalEngineeringExperiment2A" = " 2A"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
@@ -109,21 +106,24 @@ symbol = ""
 style = "bg:tokyo_bg"
 format = '[[ $symbol ($version) ](fg:tokyo_cyan bg:tokyo_bg)]($style)'
 
-[python]
-symbol = ""
-style = "bg:tokyo_bg"
-format = '[[ $symbol ($virtualenv) ](fg:tokyo_yellow bg:tokyo_bg)]($style)'
-detect_extensions = []
-detect_files = []
-detect_folders = []
-
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:tokyo_bg2"
 format = '[[  $time ](fg:tokyo_fg bg:tokyo_bg2)]($style)'
 
-[nix_shell]
-symbol = "❄️ "
-style = "bg:tokyo_bg"
-format = "[[ $symbol$state ](fg:tokyo_cyan bg:tokyo_bg)]($style)"
+[python]
+symbol = " "
+style = "bg:tokyo_bg2"
+format = '[[ $symbol ($virtualenv) ](fg:tokyo_yellow bg:tokyo_bg2)]($style)'
+detect_extensions = []
+detect_files = []
+detect_folders = []
+
+[fill]
+symbol = "─"
+style = "fg:tokyo_muted"
+
+[cmd_duration]
+min_time = 2_000
+format = "[ $duration ](fg:tokyo_muted)"
