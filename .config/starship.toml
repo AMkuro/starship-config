@@ -15,7 +15,7 @@ $rust\
 $golang\
 $php\
 $python\
-$nix_shell\
+${custom.nix_env}\
 [](fg:tokyo_bg bg:tokyo_bg2)\
 $time\
 [ ](fg:tokyo_bg2)\
@@ -125,6 +125,11 @@ style = "bg:tokyo_bg2"
 format = '[[  $time ](fg:tokyo_fg bg:tokyo_bg2)]($style)'
 
 [nix_shell]
+disabled = true
+
+[custom.nix_env]
 symbol = "❄️ "
 style = "bg:tokyo_bg"
-format = "[[ $symbol$state ](fg:tokyo_cyan bg:tokyo_bg)]($style)"
+format = "[[ $symbol$output ](fg:tokyo_cyan bg:tokyo_bg)]($style)"
+command = "printf nix"
+when = 'case ":$PATH:" in *:/nix/store/*/bin:*) exit 0;; *) test -n "$IN_NIX_SHELL";; esac'
