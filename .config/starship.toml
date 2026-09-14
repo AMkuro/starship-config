@@ -5,6 +5,7 @@ format = """
 [ $os ](bg:tokyo_cyan fg:tokyo_black)\
 $username\
 [](bg:tokyo_bg2 fg:tokyo_cyan)\
+${custom.box_badge}\
 $directory\
 [](fg:tokyo_bg2 bg:tokyo_bg3)\
 $git_branch\
@@ -79,7 +80,7 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-"Library/CloudStorage/Box-Box" = "📦 Box"
+"Library/CloudStorage/Box-Box" = "Box"
 
 [git_branch]
 symbol = ""
@@ -133,3 +134,9 @@ style = "bg:tokyo_bg"
 format = "[[ $symbol$output ](fg:tokyo_cyan bg:tokyo_bg)]($style)"
 command = "printf nix"
 when = 'case ":$PATH:" in *:/nix/store/*/bin:*) exit 0;; *) test -n "$IN_NIX_SHELL";; esac'
+
+[custom.box_badge]
+symbol = "󰃔"
+style = "bg:#0061D5 fg:#ffffff"
+format = "[ $symbol ]($style)"
+when = 'case "$PWD" in "$HOME"/Library/CloudStorage/Box-Box*) exit 0;; *) exit 1;; esac'
