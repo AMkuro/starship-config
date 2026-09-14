@@ -138,5 +138,5 @@ when = 'case ":$PATH:" in *:/nix/store/*/bin:*) exit 0;; *) test -n "$IN_NIX_SHE
 [custom.box_badge]
 symbol = "󰃔"
 style = "bg:#0061D5 fg:#ffffff"
-format = "[ $symbol ]($style)"
+format = "[](fg:#0061D5 bg:tokyo_bg2)[ $symbol ]($style)[](fg:#0061D5 bg:tokyo_bg2)"
 when = 'case "$PWD" in "$HOME"/Library/CloudStorage/Box-Box*) exit 0;; *) exit 1;; esac'
